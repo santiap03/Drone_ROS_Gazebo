@@ -1,0 +1,3 @@
+sudo apt-get install ros-kinetic-moveit* 
+sudo apt-get install ros-kinetic-find-object-2d
+
