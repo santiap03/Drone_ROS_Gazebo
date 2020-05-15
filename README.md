@@ -51,3 +51,12 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 3. Con el drone ya volando, abra una nueva terminal y ejecute lo siguiente: `sudo -s` y `rosrun datos node.py`. Se trata de una rutina pregrabada para el drone, donde el controlador se encarga de llevarlo hasta distintos puntos deseados.
 
 4. 
+
+## Controlar al drone con un control de PC
+Cierre todos las terminales que estén abiertas y abra una nueva. Igual que en pasos anteriores, se va a agregar unos comandos en el bash:
+ * `gedit .bashrc`
+
+Se va pegar lo siguiente:
+ * roscd
+* export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`/ardrone_helpers
+* cd ~
