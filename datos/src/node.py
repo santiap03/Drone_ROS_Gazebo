@@ -161,7 +161,7 @@ def secuencia():
 	if s==10:
 		status(-14,7.5,2,0)			
 def status(x,ydes,z, d):
-	print(s)
+	#print(s)
 	global s, count, desx, desy, desz,d_yaw, y
 	e=np.sqrt((dx-ax)**2+(dy-ay)**2+(dz-az)**2)
 	if e<epsilon:
