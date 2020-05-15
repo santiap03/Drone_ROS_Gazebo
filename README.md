@@ -63,5 +63,11 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 
 Por favor, copie y pegue las siguientes líneas en la parte final del documento:
  * roscd
-* export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`/ardrone_helpers
-* cd ~
+ * export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`/ardrone_helpers
+ * cd ~
+
+3. Abra una nueva terminal y ejecute:
+ * roscd
+ * sudo -s
+ * rosmake ardrone_joystick
+ * rosmake joy
