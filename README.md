@@ -53,8 +53,7 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 4. 
 
 ## Controlar al drone con un control de PC
-Cierre todos las terminales que estén abiertas y abra una nueva. Igual que en pasos anteriores, se va a agregar unos comandos en el bash:
- * `gedit .bashrc`
+Cierre todos las terminales que estén abiertas y abra una nueva. Igual que en pasos anteriores, se va a agregar unos comandos en el bash `gedit .bashrc`
 
 Se va pegar lo siguiente:
  * roscd
