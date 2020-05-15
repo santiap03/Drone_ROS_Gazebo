@@ -50,6 +50,8 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 
 3. Con el drone ya volando, abra una nueva terminal y ejecute lo siguiente: `sudo -s` y `rosrun datos node.py`. Se trata de una rutina pregrabada para el drone, donde el controlador se encarga de llevarlo hasta distintos puntos deseados.
 
+*empieza a navegar en el plano a través de los puntos de una rutina previamente definida; en cada punto pasa 5 segundos e inmediatamente se orienta hacia la siguiente posición, ubicándose sobre las mesas, rodeando la casa, cruzando el aro y finalmente aterrizando en el helipuerto.
+
 4. 
 
 ## Controlar al drone con un control de PC
