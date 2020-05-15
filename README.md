@@ -24,5 +24,5 @@ Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 2. Ejecutar `cd ~/<catkin_workspace>` y luego `catkin_make`
 3. Ejecutar `source devel/setup.bash`
 4. Instalar las dependencias:`cd src`, `sudo apt-get install ros-kinetic-hector-*`, `sudo apt-get install ros-kinetic-ardrone-autonomy`
-5. Este repositorio git clone https://github.com/angelsantamaria/tum_simulator.git
+5. `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte1`
 6. `cd ..` y `catkin_make`
