@@ -72,18 +72,18 @@ Por favor, copie y pegue las siguientes líneas en la parte final del documento:
 **Guardar y cerrar**
 
 3. Abra una nueva terminal y ejecute:
- * roscd
- * sudo -s
- * rosmake ardrone_joystick
- * rosmake joy
+ * `roscd`
+ * `sudo -s`
+ * `rosmake ardrone_joystick`
+ * `rosmake joy`
 
 4. Lo siguiente será configurar el control para que trabaje correctamente. Ejecute en una nueva terminal `roslaunch ardrone_joystick teleop.launch`
 
 Luego en otra terminal corra:
- * cd ~/drone_ws/devel/ardrone_helpers/ardrone_joystick/src
- * sudo gedit main.cpp
+ * `cd ~/drone_ws/devel/ardrone_helpers/ardrone_joystick/src`
+ * `sudo gedit main.cpp`
 
-** Se abrirá un archivo .cpp**
+**Se abrirá un archivo .cpp**
 
 Busque la siguiente parte en ese archivo:
 
@@ -102,3 +102,16 @@ Busque la siguiente parte en ese archivo:
 
         // button 0 (select): switch camera mode
         bool cam_toggle_pressed = joy_msg->buttons.at(xx);
+
+Realmente en las **xx** habrán unos números, pero esos números funcionan para el control usado en el trabajo.
+
+Lo que haremos será averiguar qué números van allí para el control que usted está usando.
+
+5. Sin cerrar las cosas del paso 4, abra una terminal y ejecute `rostopic echo /joy`
+
+En este momento debe estar viendo lo siguiente:
+
+       axes: [-0.0, -0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+       buttons: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+Mueva el joystick que quiera usar para ir adelante o atrás haciendo dicho movimiento y dejelo quieto. Observe cuál axes es el que cambió de valor, siendo la primera posición cero y la última como siete. Ese valor es el que va a anotar en `twist.linear.x = scale*joy_msg->axes[xx]; // adelante/atras`
