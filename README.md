@@ -41,9 +41,13 @@ Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 **Puede tardar un poco en comenzar, pero al menos debe visualizar que Gazebo se está cargando. Al final de la ejecución
 debería observar el mundo virtual creado con el drone puesto allí.**
 
-2. Abra otra terminal y haga la siguiente prueba: `rostopic pub -1 /ardrone/takeoff std_msgs/Empty`
+2. Abra otra terminal y haga la siguiente prueba: `sudo -s` y `rostopic pub -1 /ardrone/takeoff std_msgs/Empty`
 
   * La terminal debe sacar el mensaje: publishing and latching message for 3.0 seconds
   * La terminal que ejecuta el mundo debe sacar el mensaje: Quadrotor takes off!!
 
 **El drone debería despegar y estar volando a una baja altura del suelo. En caso de que siga volando hacia arriba se recomienda desinstalar ROS y volverlo a instalar.**
+
+3. Con el drone ya volando, abra una nueva terminal y ejecute lo siguiente: `sudo -s` y `rosrun datos node.py`. Se trata de una rutina pregrabada para el drone, donde el controlador se encarga de llevarlo hasta distintos puntos deseados.
+
+4. 
