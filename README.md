@@ -64,7 +64,7 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 **Detección de objetos:** Primero instalemos unas dependencias con `sudo apt-get install ros-kinetic-moveit*` y 
 `sudo apt-get install ros-kinetic-find-object-2d`
 
-Con la cámara del drone activa, ejecuta `rosrun find_object_2d find_object_2d image:==/ardrone/image_raw`
+Con la cámara del drone activa, ejecuta `rosrun find_object_2d find_object_2d image:=/ardrone/image_raw`
 
 ## Controlar al drone con un control de PC
 1. Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a clonar el siguiente repositorio: 
@@ -130,3 +130,7 @@ Así sucesivamente va a llenar las **xx** con el axes o buttons que cambie y que
 **Nota:** Recuerde que un joystick debería servir para adelante/atrás e izquierda/derecha, y el otro para arriba/abajo y el yaw, si quiere hacerlo similar a un control de drone normal de la vida real. Es importante que configure bien el L1 porque con él es que hará despegar al drone.
 
 Una vez termine con esto, guarde y cierre todo. Vuelva a correr el mundo y ejecute `roslaunch ardrone_joystick teleop.launch`. Ya debería poder manejar con el control a su drone a través del mundo.
+
+## Referencias
+* https://github.com/angelsantamaria/tum_simulator/blob/master/README.md
+* http://wiki.ros.org/hector_gazebo_plugins
