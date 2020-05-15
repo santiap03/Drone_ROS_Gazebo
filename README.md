@@ -55,10 +55,11 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 ## Controlar al drone con un control de PC
 1. Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a clonar el siguiente repositorio: 
  * `cd ~/<catkin_workspace>/src`
+ * `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte2 .`
 
-2. Igual que en pasos anteriores, se va a agregar unos comandos en el bash `gedit .bashrc`
+2. Igual que en pasos anteriores, se va a agregar unos comandos en el bash: `cd` y `gedit .bashrc`
 
-Se va pegar lo siguiente:
+Por favor, copie y pegue las siguientes líneas en la parte final del documento:
  * roscd
 * export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`/ardrone_helpers
 * cd ~
