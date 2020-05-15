@@ -27,7 +27,7 @@ Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
  * `cd src`
  * `sudo apt-get install ros-kinetic-hector-*`
  * `sudo apt-get install ros-kinetic-ardrone-autonomy`
-5. `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte1`
+5. `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte1 .`
 6. `cd ..` y `catkin_make`
 7. Salimos del worksapce con `cd` y ejecutamos `gedit .bashrc`. Se va a abrir un documento editable, en el cual nos ubicaremos en la última línea para pegar el siguiente comando **source ~/<catkin_workspace>/devel/setup.bash**
 8. Cierre la terminal.
@@ -53,7 +53,10 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 4. 
 
 ## Controlar al drone con un control de PC
-Cierre todos las terminales que estén abiertas y abra una nueva. Igual que en pasos anteriores, se va a agregar unos comandos en el bash `gedit .bashrc`
+1. Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a clonar el siguiente repositorio: 
+ * `cd ~/<catkin_workspace>/src`
+
+2. Igual que en pasos anteriores, se va a agregar unos comandos en el bash `gedit .bashrc`
 
 Se va pegar lo siguiente:
  * roscd
