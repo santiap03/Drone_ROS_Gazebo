@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#Realizado en Python 2.7
 
 import rospy
 from sensor_msgs.msg import NavSatFix
@@ -10,10 +11,6 @@ import tf
 import numpy as np
 import time
 
-
-#Instalar el controlador pid https://pypi.org/project/simple-pid/
-
-#
 class input_data(object):
 
     def __init__(self): #suscripcion al topic fix para datos gps
@@ -34,7 +31,7 @@ class input_data(object):
 def gms_client(model_name,relative_entity_name):
     rospy.wait_for_service('/gazebo/get_model_state')
     try:
-        gms = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
+        gms   = rospy.ServiceProxy('/gazebo/get_model_state', GetModelState)
         resp1 = gms(model_name,relative_entity_name)
         return resp1
     except rospy.ServiceException, e:
@@ -42,25 +39,25 @@ def gms_client(model_name,relative_entity_name):
 
 #---------------------------------------------------------------------------------------------
 rospy.init_node("data")#incio nodo de velocidades 
-pub = rospy.Publisher('cmd_vel', Twist, queue_size=10)
-datos=input_data()#creacion estructura de datos
-vel=Twist()
-vel.linear.x = 0
-vel.linear.y = 0
-vel.linear.z = 0
+pub   = rospy.Publisher('cmd_vel', Twist, queue_size=10)
+datos = input_data()#creacion estructura de datos
+vel   = wist()
+vel.linear.x  = 0
+vel.linear.y  = 0
+vel.linear.z  = 0
 vel.angular.x = 0
 vel.angular.y = 0
 vel.angular.z = 0
 #-------------------------------------------------------Controladores pid---------------------------------------------------
-desx=-5
-desy=10 #valores deseados y tolerancia
-desz=3
-d_yaw=0
+desx  = -5
+desy  = 10 #valores deseados y tolerancia
+desz  = 3
+d_yaw = 0
 epsilon=1
 s=0
 count=0
 #---------------------------------
-pid = PID(1, 0.1, 0.05, setpoint=desz)#controlador z
+pid  = PID(1, 0.1, 0.05, setpoint=desz)#controlador z
 pid2 = PID(1, 0.1, 0.05, setpoint=desx)#controlador x
 pid3 = PID(1, 0.1, 0.05, setpoint=desy)#controlador y 
 pid4 = PID(1, 0.1, 0.05, setpoint=0)#controlador yaw
@@ -189,21 +186,3 @@ while not rospy.is_shutdown():
 	pid3.setpoint = dy
 	pid.setpoint = dz
 	pub.publish(vel)#publicador del topic que contiene las velocidades
-	#print s
-	#print np.sqrt(((dx-ax)**2+(dy-ay)**2))
-	#print q.pose.position.x
-	#print q.pose.position.y
-	#print 'cx: ', dx
-	#print 'cy', dy
-	#print d_yaw 
-	#print 'yaw: ', y
-	#print (q.pose)
-	#print 'header'
-	#print 'lat:', datos.lat
-	#print 'lon:', datos.lon
-	#print 'alt:', datos.alt
-
-
-
-
-
