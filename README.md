@@ -57,6 +57,15 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 
 4. 
 
+### Detalles Extras
+
+**Cámara del drone:** Ejecute el siguiente comando para poder ver la cámara del drone mientras lo vuela `rosrun image_view image_view image:=/ardrone/image_raw`
+
+**Detección de objetos:** Primero instalemos unas dependencias con `sudo apt-get install ros-kinetic-moveit*` y 
+`sudo apt-get install ros-kinetic-find-object-2d`
+
+Con la cámara del drone activa, ejecuta `rosrun find_object_2d find_object_2d image:==/ardrone/image_raw`
+
 ## Controlar al drone con un control de PC
 1. Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a clonar el siguiente repositorio: 
  * `cd ~/<catkin_workspace>/src`
