@@ -1,4 +1,4 @@
-# Drone_ROS_Gazebo_Parte1
+# Drone_ROS_Gazebo
 Esto es un proyecto para la materia de Robótica dirigido al pregrado de ingeniería electrónica en la Universidad de Antioquia
 en Medellín, Colombia. Los integrantes son Santiago Álvarez Pinzón & Ken Owashi Vallejo en supervisión del profesor Andrés
 Fernando Pérez González.
