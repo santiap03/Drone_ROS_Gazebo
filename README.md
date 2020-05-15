@@ -19,10 +19,16 @@ ROS: http://wiki.ros.org/kinetic/Installation/Ubuntu
 
 Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 
-## Pasos a seguir
+## Ejecutar una simulación
 1. Abrir una terminal de Ubuntu y crear el espacio de trabajo con `mkdir -p ~/<catkin_workspace>/src`
 2. Ejecutar `cd ~/<catkin_workspace>` y luego `catkin_make`
 3. Ejecutar `source devel/setup.bash`
 4. Instalar las dependencias:`cd src`, `sudo apt-get install ros-kinetic-hector-*`, `sudo apt-get install ros-kinetic-ardrone-autonomy`
 5. `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte1`
 6. `cd ..` y `catkin_make`
+7. Salimos del worksapce con `cd` y ejecutamos `gedit .bashrc`. Se va a abrir un documento editable, en el cual nos ubicaremos en la última línea para pegar el siguiente comando **source ~/<catkin_workspace>/devel/setup.bash**
+8. Cierre esa terminal y abra una nueva. Ejecute `cd <catkin_workspace>`, `sudo -s` y `roslaunch cvg_sim_gazebo ardrone_testworld.launch`
+
+**Puede tardar un poco en comenzar, pero al menos debe visualizar que Gazebo se está cargando. Al final de la ejecución
+debería observar el mundo virtual creado con el drone puesto allí.**
+
