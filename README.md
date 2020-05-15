@@ -30,6 +30,9 @@ Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 5. `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte1 .`
 6. `cd ..` y `catkin_make`
 7. Salimos del worksapce con `cd` y ejecutamos `gedit .bashrc`. Se va a abrir un documento editable, en el cual nos ubicaremos en la última línea para pegar el siguiente comando **source ~/<catkin_workspace>/devel/setup.bash**
+
+**Guardar y cerrar**
+
 8. Cierre la terminal.
 
 ### Simulación con control automático
@@ -66,8 +69,36 @@ Por favor, copie y pegue las siguientes líneas en la parte final del documento:
  * export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`/ardrone_helpers
  * cd ~
 
+**Guardar y cerrar**
+
 3. Abra una nueva terminal y ejecute:
  * roscd
  * sudo -s
  * rosmake ardrone_joystick
  * rosmake joy
+
+4. Lo siguiente será configurar el control para que trabaje correctamente. Ejecute en una nueva terminal `roslaunch ardrone_joystick teleop.launch`
+
+Luego en otra terminal corra:
+ * cd ~/drone_ws/devel/ardrone_helpers/ardrone_joystick/src
+ * sudo gedit main.cpp
+
+** Se abrirá un archivo .cpp**
+
+Busque la siguiente parte en ese archivo:
+
+        // Mapeo de la velocidad
+        float scale = 1;
+        twist.linear.x = scale*joy_msg->axes[xx]; // adelante/atras
+        twist.linear.y = scale*joy_msg->axes[xx]; // izquierda/derecha
+        twist.linear.z = scale*joy_msg->axes[xx]; // arriba/abajo
+        twist.angular.z = scale*joy_msg->axes[xx]; // yaw
+
+        // button 10 (L1): dead man switch
+        bool dead_man_pressed = joy_msg->buttons.at(xx);
+
+        // button 11 (R1): switch emergeny state
+        bool emergency_toggle_pressed = joy_msg->buttons.at(xx);
+
+        // button 0 (select): switch camera mode
+        bool cam_toggle_pressed = joy_msg->buttons.at(xx);
