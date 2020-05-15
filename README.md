@@ -33,8 +33,8 @@ Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos 
 5. `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte1 .`
 6. `cd ..` y `catkin_make`
 7. Le damos permiso de ejecucion al archivo del bash con los siguientes comandos:
-* `cd ~/<catkin_workspace>/devel/
-* `sudo sudo chmod +x _setup_util.py
+* `cd ~/<catkin_workspace>/devel/`
+* `sudo sudo chmod +x _setup_util.py`
 8. Salimos del worksapce con `cd` y ejecutamos `gedit .bashrc`. Se va a abrir un documento editable, en el cual nos ubicaremos en la última línea para pegar el siguiente comando **source ~/<catkin_workspace>/devel/setup.bash**
 
 **Guardar y cerrar**
