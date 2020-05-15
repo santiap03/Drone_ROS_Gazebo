@@ -19,8 +19,10 @@ ROS: http://wiki.ros.org/kinetic/Installation/Ubuntu
 
 Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 
-## Cómo correr una simulación
+## Pasos a seguir
 1. Abrir una terminal de Ubuntu y crear el espacio de trabajo con `mkdir -p ~/<catkin_workspace>/src`
 2. Ejecutar `cd ~/<catkin_workspace>` y luego `catkin_make`
 3. Ejecutar `source devel/setup.bash`
 4. Instalar las dependencias:`cd src`, `sudo apt-get install ros-kinetic-hector-*`, `sudo apt-get install ros-kinetic-ardrone-autonomy`
+5. Este repositorio git clone https://github.com/angelsantamaria/tum_simulator.git
+6. `cd ..` y `catkin_make`
