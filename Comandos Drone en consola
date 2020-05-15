@@ -1,7 +1,7 @@
 # adelante
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 1.0, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'
 
-# atras
+# atrás
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: -1.0, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'
 
 # izquierda
@@ -13,46 +13,41 @@ rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.0, y: -1.0, z:
 # arriba
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.0, y: 0.0, z: 1.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'
 
-#abajo 
+# abajo 
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.0, y: 0.0, z: -1.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'
 
-# rotacion izquierda
+# rotación izquierda
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 1.0}}'
 
-# rotacion derecha
+# rotación derecha
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: -1.0}}'
 
 # stop
 rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'
 
-
-#aterrizaje
+# aterrizaje
 rostopic pub -1 /ardrone/land std_msgs/Empty
 
-#despegue
+# despegue
 rostopic pub -1 /ardrone/takeoff std_msgs/Empty
 
-#ver camara
+# ver cámara
 rosrun image_view image_view image:=/ardrone/image_raw
 
-
-
-#ACTIVAR MUNDO
-roslaunch cvg_sim_gazebo ardrone_testworld.launch
-
-#iNICIO CONTROL PS4
-roslaunch ardrone_joystick teleop.launch
-
-
-#INICIO AUTOPILOT
-rosrun datos node.py
-
-#cambio de camara
+# cambio de cámara
 rosservice call /ardrone/togglecam
 
-#sonar
+# ACTIVAR MUNDO
+roslaunch cvg_sim_gazebo ardrone_testworld.launch
+
+# INICIO CONTROL para PC
+roslaunch ardrone_joystick teleop.launch
+
+# INICIO AUTOPILOT
+rosrun datos node.py
+
+# ver datos del sonar
 rostopic echo /sonar_height
 
-
-#gps
+# ver datos del gps
 rostopic echo /fix
