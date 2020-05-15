@@ -39,4 +39,5 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 
 La terminal debe sacar el mensaje: publishing and latching message for 3.0 seconds
 La terminal que ejecuta el mundo debe sacar el mensaje: Quadrotor takes off!!
+
 **El drone debería despegar y estar volando a una baja altura del suelo. En caso de que siga volando hacia arriba se recomienda desinstalar ROS y volverlo a instalar.**
