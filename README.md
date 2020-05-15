@@ -20,6 +20,9 @@ ROS: http://wiki.ros.org/kinetic/Installation/Ubuntu
 Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 
 ## Ejecutar una simulación
+Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a clonar el siguiente repositorio: 
+ * `cd ~/<catkin_workspace>/
+ * `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte2 .`
 1. Abrir una terminal de Ubuntu y crear el espacio de trabajo con `mkdir -p ~/<catkin_workspace>/src`
 2. Ejecutar `cd ~/<catkin_workspace>` y luego `catkin_make`
 3. Ejecutar `source devel/setup.bash`
@@ -67,9 +70,7 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 Con la cámara del drone activa, ejecuta `rosrun find_object_2d find_object_2d image:=/ardrone/image_raw`
 
 ## Controlar al drone con un control de PC
-1. Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a clonar el siguiente repositorio: 
- * `cd ~/<catkin_workspace>/src`
- * `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte2 .`
+1. El contenido necesario para esto se instalo en la carpeta devel al clonar el repositorio parte 2.
 
 2. Igual que en pasos anteriores, se va a agregar unos comandos en el bash: `cd` y `gedit .bashrc`
 
