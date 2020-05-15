@@ -21,7 +21,7 @@ Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 
 ## Ejecutar una simulación
 Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a clonar el siguiente repositorio: 
- * `cd ~/<catkin_workspace>/
+ * `cd ~/<catkin_workspace>/`
  * `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte2 .`
 1. Abrir una terminal de Ubuntu y crear el espacio de trabajo con `mkdir -p ~/<catkin_workspace>/src`
 2. Ejecutar `cd ~/<catkin_workspace>` y luego `catkin_make`
