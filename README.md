@@ -27,8 +27,16 @@ Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 5. `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte1`
 6. `cd ..` y `catkin_make`
 7. Salimos del worksapce con `cd` y ejecutamos `gedit .bashrc`. Se va a abrir un documento editable, en el cual nos ubicaremos en la última línea para pegar el siguiente comando **source ~/<catkin_workspace>/devel/setup.bash**
-8. Cierre esa terminal y abra una nueva. Ejecute `cd <catkin_workspace>`, `sudo -s` y `roslaunch cvg_sim_gazebo ardrone_testworld.launch`
+8. Cierre la terminal.
+
+## Simulación con control automático
+1. Abra una nueva terminal. Ejecute `cd <catkin_workspace>`, `sudo -s` y `roslaunch cvg_sim_gazebo ardrone_testworld.launch`
 
 **Puede tardar un poco en comenzar, pero al menos debe visualizar que Gazebo se está cargando. Al final de la ejecución
 debería observar el mundo virtual creado con el drone puesto allí.**
 
+2. Abra otra terminal y haga la siguiente prueba: `rostopic pub -1 /ardrone/takeoff std_msgs/Empty`
+
+La terminal debe sacar el mensaje: publishing and latching message for 3.0 seconds
+La terminal que ejecuta el mundo debe sacar el mensaje: Quadrotor takes off!!
+**El drone debería despegar y estar volando a una baja altura del suelo. En caso de que siga volando hacia arriba se recomienda desinstalar ROS y volverlo a instalar.**
