@@ -41,7 +41,7 @@ def gms_client(model_name,relative_entity_name):
 rospy.init_node("data")#incio nodo de velocidades 
 pub   = rospy.Publisher('cmd_vel', Twist, queue_size=10)
 datos = input_data()#creacion estructura de datos
-vel   = wist()
+vel   = Twist()
 vel.linear.x  = 0
 vel.linear.y  = 0
 vel.linear.z  = 0
@@ -56,6 +56,19 @@ d_yaw = 0
 epsilon=1
 s=0
 count=0
+#--------------------------------------------------------------------------------input options
+print("Opciones: \n 1: Una posicion \n 2: rutina")
+opt=input()
+if opt==1:
+    print("Posicion X")
+    desx=input()
+    print("Posicion Y")
+    desy=input()
+    print("Posicion Z")
+    desz=input()
+    print("Desplazandose a la posicion: ", desx,desy,desz)
+if opt==2:
+    print("Iniciando rutina")
 #---------------------------------
 pid  = PID(1, 0.1, 0.05, setpoint=desz)#controlador z
 pid2 = PID(1, 0.1, 0.05, setpoint=desx)#controlador x
@@ -113,10 +126,14 @@ def pid_update():
 	v4=y
     	vel.angular.z = pid4(v4)
 def one_position():
-	 if np.sqrt((dx-ax)**2+(dy-ay)**2+(dz-az)**2)<epsilon: #condicion de terminacion para estabilizar el yaw
+	 global d_yaw
+	 e=np.sqrt((dx-ax)**2+(dy-ay)**2+(dz-az)**2)
+	 if e<epsilon: #condicion de terminacion para estabilizar el yaw
 		d_yaw=0
 	 else:
 		d_yaw=dyaw()
+
+
 
 	
 def secuencia():
@@ -178,10 +195,15 @@ while not rospy.is_shutdown():
 	q= gms_client('quadrotor', '')#obtencion de datos de posicion en q
 	r,p,y= angles() #obtencion de angulos de euler roll pitch yaw
 	dx, dy, dz, ax, ay, az= conversion() #conversion por matrices de rotacion en funcion del yaw para posicion actual y deseada
-	#one_position()
-	secuencia()
+	if opt==1:	
+		one_position()
+
+	if opt==2:
+		secuencia()
+
 	pid_update() 	
 	pid4.setpoint = d_yaw #actualizacion del setpoint del yaw en funcion de las coordenadas actuales
+
 	pid2.setpoint = dx #actualizacion del setpoint del destino en funcion del yaw
 	pid3.setpoint = dy
 	pid.setpoint = dz
