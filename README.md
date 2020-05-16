@@ -57,6 +57,7 @@ debería observar el mundo virtual creado con el drone puesto allí.**
   * La terminal que ejecuta el mundo debe sacar el mensaje: Quadrotor takes off!!
 
 **El drone debería despegar y estar volando a una baja altura del suelo. En caso de que siga volando hacia arriba se recomienda desinstalar ROS y volverlo a instalar.**
+
 Antes de realizar el siguiente paso hay que dar permiso al archivo node.py de ejecutable, para eso ejecutamos:
  * `cd ~/<catkin_workspace>/src/datos/src
  * `chmod +x node.py
