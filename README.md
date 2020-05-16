@@ -23,6 +23,9 @@ Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a crear un espacio de trabajo con el nombre que usted desee `mkdir -p ~/<catkin_workspace>/src`
 
 **Nota:** En algunos computadores, varios de los comandos mencionados aquí pueden llegar a no correr bien. Si es su caso, siempre que abra una terminal ejecute primero el comando `sudo -s`.
+`sudo apt-get install ros-<your_version>-hector-*`
+`sudo apt-get install ros-<your_version>-ardrone_autonomy`
+
 
 1. Dirijase a la carpeta **src** `cd <catkin_workspace>/src`
 2. Clonar el repositorio.
