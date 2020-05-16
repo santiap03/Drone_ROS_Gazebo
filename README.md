@@ -20,22 +20,23 @@ ROS: http://wiki.ros.org/kinetic/Installation/Ubuntu
 Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 
 ## Ejecutar una simulación
-Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a crear un espacio de trabajo con el nombre que usted desee `mkdir -p ~/<catkin_workspace>/src` y luego dirijase a la carpeta **src** `cd <catkin_workspace>/src`
+Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a crear un espacio de trabajo con el nombre que usted desee `mkdir -p ~/<catkin_workspace>/src`
 
 **Nota:** En algunos computadores, varios de los comandos mencionados aquí pueden llegar a no correr bien. Si es su caso, siempre que abra una terminal ejecute primero el comando `sudo -s`.
 
-1. Clonar el repositorio.
+1. Dirijase a la carpeta **src** `cd <catkin_workspace>/src`
+2. Clonar el repositorio.
  * `git clone https://github.com/santiap03/Drone_ROS_Gazebo`
-2. Volver a la carpeta principal del workspace `cd ..` y ejecutar el siguiente comando para instalar todas las dependencias.
+3. Volver a la carpeta principal del workspace `cd ..` y ejecutar el siguiente comando para instalar todas las dependencias.
  * `rosdep install --from-paths src --ignore-src -r -y`
-3. Estando allí mismo ejecute los siguientes comandos:
+4. Estando allí mismo ejecute los siguientes comandos:
  * `catkin_make`
  * `source devel/setup.bash`
-4. Clonar el siguiente repositorio en la carpeta devel `cd devel`.
+5. Clonar el siguiente repositorio en la carpeta devel `cd devel`.
  * `git clone https://github.com/santiap03/ardrone_helpers`
-5. Salimos del worksapce con `cd` y ejecutamos `gedit .bashrc`. 
+6. Salimos del worksapce con `cd` y ejecutamos `gedit .bashrc`. 
 
-Se va a abrir un documento editable. Dirijase hasta la última línea para pegar el siguiente comando `source ~/<catkin_workspace>/devel/setup.bash`
+Se va a abrir un documento editable. En caso de no tener el gedit, puede instalarlo o usar otra plataforma de edición de documentos. Dirijase hasta la última línea para pegar el siguiente comando `source ~/<catkin_workspace>/devel/setup.bash`
 
 **Guardar y cerrar**
 
