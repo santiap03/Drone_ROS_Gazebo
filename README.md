@@ -24,17 +24,20 @@ Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos 
 
 **Nota:** En algunos computadores, varios de los comandos mencionados aquí pueden llegar a no correr bien. Si es su caso, siempre que abra una terminal ejecute primero el comando `sudo -s`.
 
-1. Clone el siguiente repositorio: 
- * `cd <catkin_workspace>`
- * `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte2 .`
-2. Haga `catkin_make` estando en el workspace.
-3. Ejecutar `source devel/setup.bash`
-4. Instalar las dependencias:
- * `cd src`
- * `sudo apt-get install ros-kinetic-hector-*`
- * `sudo apt-get install ros-kinetic-ardrone-autonomy`
-5. `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte1 .`
-6. `cd ..` y `catkin_make`
+1. Crear la carpeta del espacio trabajo y la carpeta src dentro de ella.
+* `mkdir <catkin_workspace>
+* `cd <catkin_workspace>
+* `mkdir src
+* `cd src
+2. Clonar el repositorio.
+*`git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte1 .`
+3. Volver a la carpeta principal del workspace y ejecutar el siguiente comando para instalar todas las dependencias.
+* `rosdep install --from-paths src --ignore-src -r -y`
+4. Haga `catkin_make` estando en el workspace.
+5. Ejecutar `source devel/setup.bash`
+6. Clonar el siguiente repositorio en la carpeta devel.
+* `cd ~/<catkin_workspace>/devel
+* `git clone https://github.com/santiap03/ardrone_helpers`
 7. Salimos del worksapce con `cd` y ejecutamos `gedit .bashrc`. Se va a abrir un documento editable, en el cual nos ubicaremos en la última línea para pegar el siguiente comando **source ~/<catkin_workspace>/devel/setup.bash**
 
 **Guardar y cerrar**
@@ -57,11 +60,11 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 
 **El drone debería despegar y estar volando a una baja altura del suelo. En caso de que siga volando hacia arriba se recomienda desinstalar ROS y volverlo a instalar.**
 
-3. Con el drone ya volando, abra una nueva terminal y ejecute lo siguiente: `sudo -s` y `rosrun datos node.py`. Se trata de una rutina pregrabada para el drone, donde el controlador se encarga de llevarlo hasta distintos puntos deseados.
+3. Con el drone ya volando, abra una nueva terminal y ejecute lo siguiente: `sudo -s` y `rosrun datos node.py`. Al ejecutar el comando aparecera en consola un menu con las opciones a ejecutar, en la primera se pedirá una coordenada tridimensional a la que el drone se dirigirá automáticamente(Z!=0), la segunda se trata de una rutina pregrabada para el drone, donde el controlador se encarga de llevarlo hasta distintos puntos deseados.
 
 *empieza a navegar en el plano a través de los puntos de una rutina previamente definida; en cada punto pasa 5 segundos e inmediatamente se orienta hacia la siguiente posición, ubicándose sobre las mesas, rodeando la casa, cruzando el aro y finalmente aterrizando en el helipuerto.*
 
-4. 
+
 
 ### Detalles Extras
 
@@ -73,7 +76,7 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 Con la cámara del drone activa, ejecuta `rosrun find_object_2d find_object_2d image:=/ardrone/image_raw`
 
 ## Controlar al drone con un control de PC
-1. El contenido necesario para esto se instalo en la carpeta devel al clonar el repositorio parte 2.
+1. El contenido necesario para esto se instalo en la carpeta devel al clonar el repositorio Ardron_helpers.
 
 2. Igual que en pasos anteriores, se va a agregar unos comandos en el bash: `cd` y `gedit .bashrc`
 
