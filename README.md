@@ -20,11 +20,14 @@ ROS: http://wiki.ros.org/kinetic/Installation/Ubuntu
 Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 
 ## Ejecutar una simulación
-Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a clonar el siguiente repositorio: 
- * `cd ~/<catkin_workspace>/`
+Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a crear un espacio de trabajo con el nombre que usted desee `mkdir -p ~/<catkin_workspace>/src` y luego 
+
+**Nota:** En algunos computadores, varios de los comandos mencionados aquí pueden llegar a no correr bien, pero seguramente es porque necesitan permisos administrativos. Si es su caso, siempre que abra una terminal ejecute primero el comando `sudo -s`.
+
+1. Clone el siguiente repositorio: 
+ * `cd <catkin_workspace>`
  * `git clone https://github.com/santiap03/Drone_ROS_Gazebo_Parte2 .`
-1. Abrir una terminal de Ubuntu y crear el espacio de trabajo con `mkdir -p ~/<catkin_workspace>/src`
-2. Ejecutar `cd ~/<catkin_workspace>` y luego `catkin_make`
+2. Haga `catkin_make` estando en el workspace.
 3. Ejecutar `source devel/setup.bash`
 4. Instalar las dependencias:
  * `cd src`
