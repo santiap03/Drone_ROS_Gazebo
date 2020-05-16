@@ -71,7 +71,7 @@ La terminal que ejecuta el mundo debe sacar el mensaje: Quadrotor takes off!!
  
 Aparecera en consola un menu con las opciones a ejecutar. 
  * En la primera se pedirá una coordenada tridimensional a la que el drone se dirigirá automáticamente(Z!=0)
- * En la segunda se trata de una rutina pregrabada para el drone, donde el controlador se encarga de llevarlo hasta distintos puntos deseados.
+ * En la segunda se trata de una rutina pregrabada para el drone, donde el controlador se encarga de llevarlo hasta distintos puntos deseados:
 
 *Empieza a navegar en el plano a través de los puntos de una rutina previamente definida; en cada punto pasa 5 segundos e inmediatamente se orienta hacia la siguiente posición, ubicándose sobre las mesas, rodeando la casa, cruzando el aro y finalmente aterrizando en el helipuerto.*
 
@@ -85,9 +85,8 @@ Aparecera en consola un menu con las opciones a ejecutar.
 Con la cámara del drone activa, ejecuta `rosrun find_object_2d find_object_2d image:=/ardrone/image_raw`
 
 ## Controlar al drone con un control de PC
-1. El contenido necesario para esto se instalo en la carpeta devel al clonar el repositorio Ardron_helpers.
-
-2. Igual que en pasos anteriores, se va a agregar unos comandos en el bash: `cd` y `gedit .bashrc`
+El contenido necesario para esto se instalo en la carpeta devel al clonar el repositorio ardrone_helpers.
+1. Igual que en pasos anteriores, se va a agregar unos comandos en el bash. Abrir una nueva terminal y ejecutar `gedit .bashrc`
 
 Por favor, copie y pegue las siguientes líneas en la parte final del documento:
  * roscd
@@ -96,16 +95,17 @@ Por favor, copie y pegue las siguientes líneas en la parte final del documento:
 
 **Guardar y cerrar**
 
-3. Abra una nueva terminal y ejecute:
+2. Abra una nueva terminal y ejecute:
  * `roscd`
  * `sudo -s`
  * `rosmake ardrone_joystick`
  * `rosmake joy`
 
-4. Lo siguiente será configurar el control para que trabaje correctamente. Ejecute en una nueva terminal `roslaunch ardrone_joystick teleop.launch`
+3. Lo siguiente será configurar el control para que trabaje correctamente. Ejecute en una nueva terminal.
+ * `roslaunch ardrone_joystick teleop.launch`
 
-Luego en otra terminal corra:
- * `cd ~/drone_ws/devel/ardrone_helpers/ardrone_joystick/src`
+4. Luego en otra terminal corra:
+ * `cd ~/<catkin_workspace>/devel/ardrone_helpers/ardrone_joystick/src`
  * `sudo gedit main.cpp`
 
 **Se abrirá un archivo .cpp**
