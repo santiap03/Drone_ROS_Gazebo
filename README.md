@@ -41,9 +41,8 @@ Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos 
 
 Se va a abrir un documento editable. En caso de no tener el gedit, puede instalarlo o usar otra plataforma de edición de documentos. Dirijase hasta la última línea para pegar el siguiente comando `source ~/<catkin_workspace>/devel/setup.bash`
 
-**Guardar y cerrar**
-
-6. Cierre la terminal.
+8. Guardar y cerrar.
+9. Cierre la terminal.
 
 ### Simulación con control automático
 1. Abra una nueva terminal. Ejecute: 
