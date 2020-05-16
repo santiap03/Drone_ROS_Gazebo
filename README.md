@@ -59,10 +59,10 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 **El drone debería despegar y estar volando a una baja altura del suelo. En caso de que siga volando hacia arriba se recomienda desinstalar ROS y volverlo a instalar.**
 
 Antes de realizar el siguiente paso hay que dar permiso al archivo node.py de ejecutable, para eso ejecutamos:
- * `cd ~/<catkin_workspace>/src/datos/src
- * `chmod +x node.py
+ * `cd ~/<catkin_workspace>/src/datos/src`
+ * `chmod +x node.py`
 Ademas instalar la libreria de python necesaria:
-* `pip install simple-pid
+* `pip install simple-pid`
 3. Con el drone ya volando, abra una nueva terminal y ejecute lo siguiente: `sudo -s` y `rosrun datos node.py`. Al ejecutar el comando aparecera en consola un menu con las opciones a ejecutar, en la primera se pedirá una coordenada tridimensional a la que el drone se dirigirá automáticamente(Z!=0), la segunda se trata de una rutina pregrabada para el drone, donde el controlador se encarga de llevarlo hasta distintos puntos deseados.
 
 *empieza a navegar en el plano a través de los puntos de una rutina previamente definida; en cada punto pasa 5 segundos e inmediatamente se orienta hacia la siguiente posición, ubicándose sobre las mesas, rodeando la casa, cruzando el aro y finalmente aterrizando en el helipuerto.*
