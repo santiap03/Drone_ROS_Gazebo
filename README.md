@@ -23,21 +23,21 @@ Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a crear un espacio de trabajo con el nombre que usted desee `mkdir -p ~/<catkin_workspace>/src`
 
 **Nota:** En algunos computadores, varios de los comandos mencionados aquí pueden llegar a no correr bien. Si es su caso, siempre que abra una terminal ejecute primero el comando `sudo -s`.
-`sudo apt-get install ros-<your_version>-hector-*`
-`sudo apt-get install ros-<your_version>-ardrone_autonomy`
 
-
-1. Dirijase a la carpeta **src** `cd <catkin_workspace>/src`
-2. Clonar el repositorio.
+1. Instalar las siguientes dependencias:
+ * `sudo apt-get install ros-<your_version>-hector-*`
+ * `sudo apt-get install ros-<your_version>-ardrone_autonomy`
+2. Dirijase a la carpeta **src** `cd <catkin_workspace>/src`
+3. Clonar el repositorio.
  * `git clone https://github.com/santiap03/Drone_ROS_Gazebo`
-3. Volver a la carpeta principal del workspace `cd ..` y ejecutar el siguiente comando para instalar todas las dependencias.
+4. Volver a la carpeta principal del workspace `cd ..` y ejecutar el siguiente comando para instalar todas las dependencias.
  * `rosdep install --from-paths src --ignore-src -r -y`
-4. Estando allí mismo ejecute los siguientes comandos:
+5. Estando allí mismo ejecute los siguientes comandos:
  * `catkin_make`
  * `source devel/setup.bash`
-5. Clonar el siguiente repositorio en la carpeta devel `cd devel`.
+6. Clonar el siguiente repositorio en la carpeta devel `cd devel`.
  * `git clone https://github.com/santiap03/ardrone_helpers`
-6. Salimos del worksapce con `cd` y ejecutamos `gedit .bashrc`. 
+7. Salimos del worksapce con `cd` y ejecutamos `gedit .bashrc`. 
 
 Se va a abrir un documento editable. En caso de no tener el gedit, puede instalarlo o usar otra plataforma de edición de documentos. Dirijase hasta la última línea para pegar el siguiente comando `source ~/<catkin_workspace>/devel/setup.bash`
 
