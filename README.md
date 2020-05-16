@@ -29,7 +29,7 @@ Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos 
  * `git clone https://github.com/santiap03/Drone_ROS_Gazebo`
 3. Volver a la carpeta principal del workspace `cd ..` y ejecutar el siguiente comando para instalar todas las dependencias.
  * `rosdep install --from-paths src --ignore-src -r -y`
-4. Estando allí mismo ejecute los siguientes comandos:
+4. Estando allí mismo ejecute los siguientes comandos.
  * `catkin_make`
  * `source devel/setup.bash`
 5. Clonar el siguiente repositorio en la carpeta devel `cd devel`.
@@ -45,29 +45,35 @@ Se va a abrir un documento editable. En caso de no tener el gedit, puede instala
 ### Simulación con control automático
 1. Abra una nueva terminal. Ejecute 
  * `cd <catkin_workspace>`
- * `sudo -s`
  * `roslaunch cvg_sim_gazebo ardrone_testworld.launch`
 
 **Puede tardar un poco en comenzar, pero al menos debe visualizar que Gazebo se está cargando. Al final de la ejecución
 debería observar el mundo virtual creado con el drone puesto allí.**
 
-2. Abra otra terminal y haga la siguiente prueba: `sudo -s` y `rostopic pub -1 /ardrone/takeoff std_msgs/Empty`
+2. Abra otra terminal y haga la siguiente prueba.
+ * `rostopic pub -1 /ardrone/takeoff std_msgs/Empty`
+ 
+La terminal debe sacar el mensaje: publishing and latching message for 3.0 seconds
 
-  * La terminal debe sacar el mensaje: publishing and latching message for 3.0 seconds
-  * La terminal que ejecuta el mundo debe sacar el mensaje: Quadrotor takes off!!
+La terminal que ejecuta el mundo debe sacar el mensaje: Quadrotor takes off!!
 
 **El drone debería despegar y estar volando a una baja altura del suelo. En caso de que siga volando hacia arriba se recomienda desinstalar ROS y volverlo a instalar.**
 
-Antes de realizar el siguiente paso hay que dar permiso al archivo node.py de ejecutable, para eso ejecutamos:
+3. Hay que dar permiso al archivo node.py de ejecutable.
  * `cd ~/<catkin_workspace>/src/datos/src`
  * `chmod +x node.py`
  
-Ademas instalar la libreria de python necesaria:
-* `pip install simple-pid`
-3. Con el drone ya volando, abra una nueva terminal y ejecute lo siguiente: `sudo -s` y `rosrun datos node.py`. Al ejecutar el comando aparecera en consola un menu con las opciones a ejecutar, en la primera se pedirá una coordenada tridimensional a la que el drone se dirigirá automáticamente(Z!=0), la segunda se trata de una rutina pregrabada para el drone, donde el controlador se encarga de llevarlo hasta distintos puntos deseados.
-Empieza a navegar en el plano a través de los puntos de una rutina previamente definida; en cada punto pasa 5 segundos e inmediatamente se orienta hacia la siguiente posición, ubicándose sobre las mesas, rodeando la casa, cruzando el aro y finalmente aterrizando en el helipuerto.*
+4. Instalar la libreria de python necesaria:
+ * `pip install simple-pid`
+ 
+5. Con el drone ya volando, abra una nueva terminal y ejecute.
+ * `rosrun datos node.py`
+ 
+Aparecera en consola un menu con las opciones a ejecutar. 
+ * En la primera se pedirá una coordenada tridimensional a la que el drone se dirigirá automáticamente(Z!=0)
+ * En la segunda se trata de una rutina pregrabada para el drone, donde el controlador se encarga de llevarlo hasta distintos puntos deseados.
 
-
+*Empieza a navegar en el plano a través de los puntos de una rutina previamente definida; en cada punto pasa 5 segundos e inmediatamente se orienta hacia la siguiente posición, ubicándose sobre las mesas, rodeando la casa, cruzando el aro y finalmente aterrizando en el helipuerto.*
 
 ### Detalles Extras
 
