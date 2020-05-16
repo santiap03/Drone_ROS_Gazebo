@@ -29,7 +29,7 @@ Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos 
  * `git clone https://github.com/santiap03/Drone_ROS_Gazebo`
 3. Volver a la carpeta principal del workspace `cd ..` y ejecutar el siguiente comando para instalar todas las dependencias.
  * `rosdep install --from-paths src --ignore-src -r -y`
-4. Estando allí mismo ejecute los siguientes comandos.
+4. Estando allí mismo ejecute los siguientes comandos:
  * `catkin_make`
  * `source devel/setup.bash`
 5. Clonar el siguiente repositorio en la carpeta devel `cd devel`.
@@ -43,7 +43,7 @@ Se va a abrir un documento editable. En caso de no tener el gedit, puede instala
 6. Cierre la terminal.
 
 ### Simulación con control automático
-1. Abra una nueva terminal. Ejecute 
+1. Abra una nueva terminal. Ejecute: 
  * `cd <catkin_workspace>`
  * `roslaunch cvg_sim_gazebo ardrone_testworld.launch`
 
@@ -66,7 +66,7 @@ La terminal que ejecuta el mundo debe sacar el mensaje: Quadrotor takes off!!
 4. Instalar la libreria de python necesaria:
  * `pip install simple-pid`
  
-5. Con el drone ya volando, abra una nueva terminal y ejecute.
+5. Con el drone ya volando, abra una nueva terminal y ejecute:
  * `rosrun datos node.py`
  
 Aparecera en consola un menu con las opciones a ejecutar. 
@@ -86,7 +86,8 @@ Con la cámara del drone activa, ejecuta `rosrun find_object_2d find_object_2d i
 
 ## Controlar al drone con un control de PC
 El contenido necesario para esto se instalo en la carpeta devel al clonar el repositorio ardrone_helpers.
-1. Igual que en pasos anteriores, se va a agregar unos comandos en el bash. Abrir una nueva terminal y ejecutar `gedit .bashrc`
+1. Igual que en pasos anteriores, se va a agregar unos comandos en el bash. Abrir una nueva terminal y ejecutar: 
+ * `gedit .bashrc`
 
 Por favor, copie y pegue las siguientes líneas en la parte final del documento:
  * roscd
@@ -101,7 +102,7 @@ Por favor, copie y pegue las siguientes líneas en la parte final del documento:
  * `rosmake ardrone_joystick`
  * `rosmake joy`
 
-3. Lo siguiente será configurar el control para que trabaje correctamente. Ejecute en una nueva terminal.
+3. Lo siguiente será configurar el control para que trabaje correctamente. Ejecute en una nueva terminal:
  * `roslaunch ardrone_joystick teleop.launch`
 
 4. Luego en otra terminal corra:
@@ -139,7 +140,7 @@ En este momento debe estar viendo lo siguiente:
        axes: [-0.0, -0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
        buttons: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-Mueva el joystick que quiera usar para ir adelante o atrás haciendo dicho movimiento y dejelo quieto. Observe cuál axes es el que cambió de valor, siendo la primera posición cero y la última como siete. Ese valor es el que va a anotar en `twist.linear.x = scale*joy_msg->axes[xx]; // adelante/atras`
+Mueva el joystick que quiera usar para ir adelante o atrás haciendo dicho movimiento y mantenga esa acción. Observe cuál de los axes es el que cambió de valor (todos deben estar en cero, menos uno), siendo la primera posición cero y la última siete. Ese valor es el que va a anotar en `twist.linear.x = scale*joy_msg->axes[xx]; // adelante/atras`
 
 Así sucesivamente va a llenar las **xx** con el axes o buttons que cambie y que ustede desee.
 
