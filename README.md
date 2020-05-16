@@ -22,7 +22,7 @@ Gazebo: http://gazebosim.org/tutorials?cat=install&tut=install_ubuntu&ver=7.0
 ## Ejecutar una simulación
 Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos a crear un espacio de trabajo con el nombre que usted desee `mkdir -p ~/<catkin_workspace>/src` y luego 
 
-**Nota:** En algunos computadores, varios de los comandos mencionados aquí pueden llegar a no correr bien, pero seguramente es porque necesitan permisos administrativos. Si es su caso, siempre que abra una terminal ejecute primero el comando `sudo -s`.
+**Nota:** En algunos computadores, varios de los comandos mencionados aquí pueden llegar a no correr bien. Si es su caso, siempre que abra una terminal ejecute primero el comando `sudo -s`.
 
 1. Clone el siguiente repositorio: 
  * `cd <catkin_workspace>`
