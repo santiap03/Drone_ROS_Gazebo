@@ -25,19 +25,21 @@ Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos 
 **Nota:** En algunos computadores, varios de los comandos mencionados aquí pueden llegar a no correr bien. Si es su caso, siempre que abra una terminal ejecute primero el comando `sudo -s`.
 
 1. Clonar el repositorio.
-*`git clone https://github.com/santiap03/Drone_ROS_Gazebo`
-3. Volver a la carpeta principal del workspace y ejecutar el siguiente comando para instalar todas las dependencias.
-* `rosdep install --from-paths src --ignore-src -r -y`
-4. Haga `catkin_make` estando en el workspace.
-5. Ejecutar `source devel/setup.bash`
-6. Clonar el siguiente repositorio en la carpeta devel.
-* `cd ~/<catkin_workspace>/devel
-* `git clone https://github.com/santiap03/ardrone_helpers`
-7. Salimos del worksapce con `cd` y ejecutamos `gedit .bashrc`. Se va a abrir un documento editable, en el cual nos ubicaremos en la última línea para pegar el siguiente comando **source ~/<catkin_workspace>/devel/setup.bash**
+ * `git clone https://github.com/santiap03/Drone_ROS_Gazebo`
+2. Volver a la carpeta principal del workspace `cd ..` y ejecutar el siguiente comando para instalar todas las dependencias.
+ * `rosdep install --from-paths src --ignore-src -r -y`
+3. Estando allí mismo ejecute los siguientes comandos:
+ * `catkin_make`
+ * `source devel/setup.bash`
+4. Clonar el siguiente repositorio en la carpeta devel `cd devel`.
+ * `git clone https://github.com/santiap03/ardrone_helpers`
+5. Salimos del worksapce con `cd` y ejecutamos `gedit .bashrc`. 
+
+Se va a abrir un documento editable. Dirijase hasta la última línea para pegar el siguiente comando `source ~/<catkin_workspace>/devel/setup.bash`
 
 **Guardar y cerrar**
 
-8. Cierre la terminal.
+6. Cierre la terminal.
 
 ### Simulación con control automático
 1. Abra una nueva terminal. Ejecute 
