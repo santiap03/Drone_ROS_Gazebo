@@ -61,6 +61,7 @@ debería observar el mundo virtual creado con el drone puesto allí.**
 Antes de realizar el siguiente paso hay que dar permiso al archivo node.py de ejecutable, para eso ejecutamos:
  * `cd ~/<catkin_workspace>/src/datos/src`
  * `chmod +x node.py`
+ 
 Ademas instalar la libreria de python necesaria:
 * `pip install simple-pid`
 3. Con el drone ya volando, abra una nueva terminal y ejecute lo siguiente: `sudo -s` y `rosrun datos node.py`. Al ejecutar el comando aparecera en consola un menu con las opciones a ejecutar, en la primera se pedirá una coordenada tridimensional a la que el drone se dirigirá automáticamente(Z!=0), la segunda se trata de una rutina pregrabada para el drone, donde el controlador se encarga de llevarlo hasta distintos puntos deseados.
