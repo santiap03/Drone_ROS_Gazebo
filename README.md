@@ -160,7 +160,12 @@ Así sucesivamente va a llenar las **xx** con el axes o buttons que cambie y que
 
 **Nota:** Recuerde que un joystick debería servir para adelante/atrás e izquierda/derecha, y el otro para arriba/abajo y el yaw, si quiere hacerlo similar a un control de drone normal de la vida real. Es importante que configure bien el L1 porque con él es que hará despegar al drone.
 
-Una vez termine con esto, guarde y cierre todo. Vuelva a correr el mundo y ejecute `roslaunch ardrone_joystick teleop.launch`. Ya debería poder manejar con el control a su drone a través del mundo.
+Una vez termine con esto, guarde y cierre todo.
+
+Vuelva a correr el mundo y ejecute `roslaunch ardrone_joystick teleop.launch`.
+
+Ya debería poder manejar con el control a su drone a través del mundo.
+
 
 ## Referencias
 * https://github.com/angelsantamaria/tum_simulator/blob/master/README.md
