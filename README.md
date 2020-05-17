@@ -25,8 +25,8 @@ Primero cierre todos las terminales que estén abiertas y abra una nueva. Vamos 
 **Nota:** En algunos computadores, varios de los comandos mencionados aquí pueden llegar a no correr bien. Si es su caso, siempre que abra una terminal ejecute primero el comando `sudo -s`.
 
 1. Instalar las siguientes dependencias:
- * `sudo apt-get install ros-<your_version>-hector-*`
- * `sudo apt-get install ros-<your_version>-ardrone_autonomy`
+ * `sudo apt-get install ros-kinetic-hector-*`   
+ * `sudo apt-get install ros-kinetic-ardrone-autonomy`
 2. Dirijase a la carpeta **src** `cd <catkin_workspace>/src`
 3. Clonar el repositorio.
  * `git clone https://github.com/santiap03/Drone_ROS_Gazebo`
