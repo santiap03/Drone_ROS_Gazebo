@@ -62,7 +62,7 @@ La terminal que ejecuta el mundo debe sacar el mensaje: Quadrotor takes off!!
 **El drone debería despegar y estar volando a una baja altura del suelo. En caso de que siga volando hacia arriba se recomienda desinstalar ROS y volverlo a instalar.**
 
 3. Hay que dar permiso al archivo node.py de ejecutable.
- * `cd ~/<catkin_workspace>/src/datos/src`
+ * `cd ~/<catkin_workspace>/src/Drone_ROS_Gazebo/datos/src`
  * `chmod +x node.py`
  
 4. Instalar la libreria de python necesaria:
