@@ -1,7 +1,4 @@
 # Drone ROS&Gazebo
-
-![alt text](https://github.com/santiap03/Drone_ROS_Gazebo/blob/master/images/mundo.jpg)
-
 Esto es un proyecto para la materia de Robótica dirigido al pregrado de ingeniería electrónica en la Universidad de Antioquia
 en Medellín, Colombia. Los integrantes son Santiago Álvarez Pinzón & Ken Owashi Vallejo en supervisión del profesor Andrés
 Fernando Pérez González.
@@ -11,6 +8,8 @@ de manejarse por medio de consola a través de unos comandos que se dejan en est
 igualmente se puede controlar usando un control de pc que disponga a la mano. También tiene desarrollado un controlador PID 
 para que sea posible que el drone vaya solo hasta un punto deseado, sin embargo no es inteligente, así que no tiene la 
 capacidad de evadir obstáculos en el camino. 
+
+![alt text](https://github.com/santiap03/Drone_ROS_Gazebo/blob/master/images/drone.jpg)
 
 ## Especificaciones
 El trabajo se desarrolló en **Ubuntu 16.04.1 LTS** corriendo como sistema operativo del PC, no en máquina virtual. La versión de
@@ -55,6 +54,10 @@ Se va a abrir un documento editable. En caso de no tener el gedit, puede instala
 **Puede tardar un poco en comenzar, pero al menos debe visualizar que Gazebo se está cargando. Al final de la ejecución
 debería observar el mundo virtual creado con el drone puesto allí.**
 
+![alt text](https://github.com/santiap03/Drone_ROS_Gazebo/blob/master/images/mundo.jpg)
+
+![alt text](https://github.com/santiap03/Drone_ROS_Gazebo/blob/master/images/mundo2.jpg)
+
 2. Abra otra terminal y haga la siguiente prueba.
  * `rostopic pub -1 /ardrone/takeoff std_msgs/Empty`
  
@@ -84,10 +87,16 @@ Aparecera en consola un menu con las opciones a ejecutar.
 
 **Cámara del drone:** Ejecute el siguiente comando para poder ver la cámara del drone mientras lo vuela `rosrun image_view image_view image:=/ardrone/image_raw`
 
+![alt text](https://github.com/santiap03/Drone_ROS_Gazebo/blob/master/images/cam_drone.jpg)
+
 **Detección de objetos:** Primero instalemos unas dependencias con `sudo apt-get install ros-kinetic-moveit*` y 
 `sudo apt-get install ros-kinetic-find-object-2d`
 
 Con la cámara del drone activa, ejecuta `rosrun find_object_2d find_object_2d image:=/ardrone/image_raw`
+
+![alt text](https://github.com/santiap03/Drone_ROS_Gazebo/blob/master/images/identify.jpg)
+
+![alt text](https://github.com/santiap03/Drone_ROS_Gazebo/blob/master/images/identify2.jpg)
 
 ## Controlar al drone con un control de PC
 El contenido necesario para esto se instalo en la carpeta devel al clonar el repositorio ardrone_helpers.
