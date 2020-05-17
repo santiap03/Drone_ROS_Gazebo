@@ -87,14 +87,14 @@ Aparecera en consola un menu con las opciones a ejecutar.
 
 **Cámara del drone:** Ejecute el siguiente comando para poder ver la cámara del drone mientras lo vuela `rosrun image_view image_view image:=/ardrone/image_raw`
 
-![alt text](https://github.com/santiap03/Drone_ROS_Gazebo/blob/master/images/cam_drone.jpg)
+![alt text](https://github.com/santiap03/Drone_ROS_Gazebo/blob/master/images/cam_drone.png)
 
 **Detección de objetos:** Primero instalemos unas dependencias con `sudo apt-get install ros-kinetic-moveit*` y 
 `sudo apt-get install ros-kinetic-find-object-2d`
 
 Con la cámara del drone activa, ejecuta `rosrun find_object_2d find_object_2d image:=/ardrone/image_raw`
 
-![alt text](https://github.com/santiap03/Drone_ROS_Gazebo/blob/master/images/identify.jpg)
+![alt text](https://github.com/santiap03/Drone_ROS_Gazebo/blob/master/images/identify1.jpg)
 
 ![alt text](https://github.com/santiap03/Drone_ROS_Gazebo/blob/master/images/identify2.jpg)
 
